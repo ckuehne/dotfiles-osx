@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Create symbolic links in the user home to some of the files in dotfilex-osx.
+# Author: Conny Kuehne
+
+NUMARGS=$#
+
+if ((NUMARGS != 1))
+then
+    echo "Creates symbolic links in $HOME to dotfiles-osx-dir."
+    echo "Usage: elen dotfiles-osx-dir"
+    exit
+fi
+
+DOTFILES_OSX_DIR=$1
+
+if [ ! -d $DOTFILES_OSX_DIR ]
+then
+    echo "Directory $DOTFILES_OSX_DIR not found!"
+    exit
+fi
+
+for file in .{aliases,bash_profile,bash_prompt,bash_rc,curlrc,exports,extra,functions,inputrc,wgetrc}; do
+    # Put $(brew --prefix coreutils)/libexec/gnubin to \$PATH. for ln --backup to work
+    ln -v --backup=t -s $DOTFILES_OSX_DIR/$file $HOME/$file
+done
