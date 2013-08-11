@@ -6,6 +6,10 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# for fast multiple terminal navigation to same dir
+alias mark='pwd | pbcopy'
+alias go='cd `pbpaste`'
+
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
@@ -19,6 +23,12 @@ alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+
+alias gdiff='git diff --no-index --color'
+alias g='git'
+# Autocomplete for 'g' alias as well
+# complete -o default -o nospace -F git g
+
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -139,3 +149,5 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+
