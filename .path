@@ -1,0 +1,2 @@
+# Add `gnubin` to the `$PATH`. It contains the coreutils installed via brew.
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
