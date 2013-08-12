@@ -20,7 +20,11 @@ then
     exit
 fi
 
-for file in .{aliases,bash_profile,bash_prompt,bashrc,curlrc,exports,extra,functions,inputrc,path,wgetrc}; do
+for file in .{aliases,bash_profile,bash_prompt,bashrc,curlrc,exports,extra,functions,gitattributes,gitconfig,gitignore,inputrc,path,wgetrc}; do
     # Put $(brew --prefix coreutils)/libexec/gnubin to \$PATH. for ln --backup to work
+    if  [ ! -e $file ]
+    then
+	echo "$file not found!"
+    fi
     ln -v --backup=t -s $DOTFILES_OSX_DIR/$file $HOME/$file
 done
