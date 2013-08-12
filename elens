@@ -20,7 +20,7 @@ then
     exit
 fi
 
-for file in .{aliases,bash_profile,bash_prompt,bashrc,curlrc,exports,extra,functions,inputrc,wgetrc}; do
+for file in .{aliases,bash_profile,bash_prompt,bashrc,curlrc,exports,extra,functions,inputrc,path,wgetrc}; do
     # Put $(brew --prefix coreutils)/libexec/gnubin to \$PATH. for ln --backup to work
     ln -v --backup=t -s $DOTFILES_OSX_DIR/$file $HOME/$file
 done
