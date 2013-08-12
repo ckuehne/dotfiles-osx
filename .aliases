@@ -28,7 +28,8 @@ alias oo="open ."
 # more is less
 alias more="less"
 
-alias gdiff='git diff --no-index --color'
+# http://stackoverflow.com/q/3231759
+alias gdiff='git diff --color-words'
 alias g='git'
 # Autocomplete for 'g' alias as well
 # complete -o default -o nospace -F git g
