@@ -426,6 +426,13 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
+# TODO(ckuehne): this does not work
+# Add the keyboard shortcut ⌘ + Shift + -> to select the next tab in Safari
+# defaults write com.apple.safari NSUserKeyEquivalents -dict-add "Select Next Tab" "@~\\U2192"
+# Add the keyboard shortcut ⌘ + Shift + -> to select the previous tab in Safari
+# defaults write com.apple.safari NSUserKeyEquivalents -dict-add "Select Previous Tab" "@~\\U2190";
+
+
 ###############################################################################
 # iTunes (pre-iTunes 11 only)                                                 #
 ###############################################################################
