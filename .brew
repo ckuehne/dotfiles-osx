@@ -27,6 +27,12 @@ brew install homebrew/dupes/grep
 #brew install homebrew/dupes/vim
 #brew install homebrew/dupes/screen
 
+# install a cool version of emacs
+brew install emacs --HEAD --use-git-head --cocoa --srgb
+# symbolic linking in /Applications does not support launchpad and Spotlight
+# http://wikemacs.org/index.php/Installing_Emacs_on_OS_X
+cp -r /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
+
 # Install other useful binaries
 brew install ack
 #brew install exiv2
@@ -53,6 +59,7 @@ function installcask() {
 }
 
 installcask dropbox
+installcask KeyRemap4MacBook
 # installcask google-chrome
 # installcask google-chrome-canary
 # installcask imagealpha
