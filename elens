@@ -3,28 +3,59 @@
 # Create symbolic links in the user home to some of the files in dotfilex-osx.
 # Author: Conny Kuehne
 
-NUMARGS=$#
+files="aliases bash_profile bash_prompt bashrc curlrc exports extra functions gitattributes gitconfig gitignore inputrc path wgetrc"
 
-if ((NUMARGS != 1))
+NO_ARGS=0
+
+if [ $# -eq "$NO_ARGS" ]    # Script invoked with no command-line args?
 then
     echo "Creates symbolic links in $HOME to dotfiles-osx-dir."
-    echo "Usage: elen dotfiles-osx-dir"
+    echo "Usage: `basename $0` dotfiles-osx-dir to create the symbolic links."
+    echo "`basename $0` option (-d) for deleting the symbolic links."
+    exit 2
+fi 
+
+DELETE=
+while getopts :d arg
+do
+    case $arg in
+        d) DELETE=TRUE ;;
+	\?) echo "Invalid option -$OPTARG." >&2 ;;
+    esac
+done
+
+if [ $DELETE ] ; then
+    for f in $files; do
+	file=".$f"
+	if  [ ! -e $file ]
+	then
+	    echo "$file not found!"
+	else
+            echo "Deleting $HOME/$file."
+	    rm -f $HOME/$file
+        fi
+    done
     exit
-fi
+fi    
 
 DOTFILES_OSX_DIR=$1
 
 if [ ! -d $DOTFILES_OSX_DIR ]
 then
     echo "Directory $DOTFILES_OSX_DIR not found!"
-    exit
+    exit 2
 fi
 
-for file in .{aliases,bash_profile,bash_prompt,bashrc,curlrc,exports,extra,functions,gitattributes,gitconfig,gitignore,inputrc,path,wgetrc}; do
+
+
+for f in $files; do
+    file=".$f"
     # Put $(brew --prefix coreutils)/libexec/gnubin to \$PATH. for ln --backup to work
     if  [ ! -e $file ]
     then
 	echo "$file not found!"
     fi
-    ln -v --backup=t -s $DOTFILES_OSX_DIR/$file $HOME/$file
+    echo "Creating symbolic link $HOME/$file"
+    $(brew --prefix coreutils)/libexec/gnubin/ln -v --backup=t -s $DOTFILES_OSX_DIR/$file $HOME/$file
 done
+exit
