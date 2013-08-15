@@ -33,6 +33,12 @@ brew install emacs --HEAD --use-git-head --cocoa --srgb
 # http://wikemacs.org/index.php/Installing_Emacs_on_OS_X
 cp -r /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
 
+# IMPORTANT: need XCode command line tools for that
+brew install svn
+if [ $? -ne 0 ] ; then 
+    echo "Try: Xcode->Prefs->Downloads->Command Line Tools->Install"
+fi
+
 # Install other useful binaries
 brew install ack
 #brew install exiv2
