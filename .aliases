@@ -11,7 +11,7 @@ alias mark='pwd | pbcopy'
 alias go='cd `pbpaste`'
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
