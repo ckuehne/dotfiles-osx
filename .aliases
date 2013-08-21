@@ -155,4 +155,6 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
-
+# more cd aliases
+alias cdbackup="cd /Volumes/FreeAgent Drive/Backups.backupdb/topaz/Latest/Macintosh HD/Users/ckuehne"
+alias cddotfiles="cd ~/Projects/dotfiles-osx"
