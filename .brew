@@ -13,6 +13,12 @@ echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH.
 brew install findutils
 # Install Bash 4
 brew install bash
+# append to list of accepted shells
+if ! grep -q "/usr/local/bin/bash" /etc/shells; then
+    echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+fi
+# make it my default shell (http://apple.stackexchange.com/a/24635)
+chsh -s /usr/local/bin/bash
 
 # Install wget with IRI support
 brew install wget --enable-iri
@@ -31,10 +37,11 @@ brew install homebrew/dupes/grep
 brew install emacs --HEAD --use-git-head --cocoa --srgb
 # symbolic linking in /Applications does not support launchpad and Spotlight
 # http://wikemacs.org/index.php/Installing_Emacs_on_OS_X
-cp -r /usr/local/Cellar/emacs/24.3/Emacs.app /Applications/
+cp -ra /usr/local/Cellar/emacs/HEAD/Emacs.app /Applications/
 
-# IMPORTANT: need XCode command line tools for that
-brew install svn
+# svn; java support needed for Eclipse integration
+brew install svn --java
+# IMPORTANT: need XCode command line tools for svn to work correctly
 if [ $? -ne 0 ] ; then 
     echo "Try: Xcode->Prefs->Downloads->Command Line Tools->Install"
 fi
