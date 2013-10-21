@@ -1,2 +1,3 @@
 # aliases for $HOSTNAME topaz
 alias cddiss="cd ~/Projects/uni/diss/draft"
+alias ipy="ipython --pylab=osx --colors=Linux"
