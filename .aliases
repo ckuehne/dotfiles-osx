@@ -7,7 +7,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # for fast multiple terminal navigation to same dir
-alias mark='pwd | pbcopy'
+alias mark="pwd | tr -d '\n' | pbcopy"
 alias go='cd `pbpaste`'
 
 # Shortcuts
