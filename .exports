@@ -30,3 +30,6 @@ export HOMEBREW_KEEP_INFO=1
 # http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+# tell pip to only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
