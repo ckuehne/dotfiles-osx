@@ -71,3 +71,6 @@
 
 [push]
 	default = matching
+[user]
+	name = Conny Kuehne
+	email = conny.kuehne@gmail.com
