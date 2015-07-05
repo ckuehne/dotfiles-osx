@@ -109,7 +109,7 @@ alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
 # retrain myself to use del for trash delete and full path rm for rm
 # (from  http://apple.stackexchange.com/a/17637)
-alias rm="echo Use del, or full path name for rm \(/usr/local/opt/coreutils/libexec/gnubin/rm\)."
+# alias rm="echo Use del, or full path name for rm \(/usr/local/opt/coreutils/libexec/gnubin/rm\)."
 alias del="rmtrash" #del is shorter as rmtrash, or simply use rmtrash directly
 
 # Empty the Trash on all mounted volumes and the main HDD
