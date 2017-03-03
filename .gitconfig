@@ -70,7 +70,9 @@
 	insteadOf = "gist:"
 
 [push]
-	default = matching
+	default = current
 [user]
 	name = Conny Kuehne
 	email = conny.kuehne@gmail.com
+[credential]
+	helper = osxkeychain
