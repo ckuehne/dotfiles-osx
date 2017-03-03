@@ -1,3 +1,7 @@
 # aliases for $HOSTNAME topaz
 alias cddiss="cd ~/Projects/uni/diss/draft"
 alias ipy="ipython --pylab=osx --colors=Linux"
+alias cdpeersim="cd ~/Projects/uni/problems/peer_rating_simulation"
+alias cdpupblication="cd ~/Projects/uni/problems/peer_rating_simulation/Peersim/publication"
+alias cddeaf="cd ~/Projects/deaf/trunk"
+alias cddsapaper="cd ~/Documents/uni/papers/dsa_paper/"
