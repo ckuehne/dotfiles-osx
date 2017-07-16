@@ -26,6 +26,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # make homebrew keep info files
 export HOMEBREW_KEEP_INFO=1
 
+#Javahome
+export JAVA_HOME="${JAVA_HOME:-$(/usr/libexec/java_home)}"
+export PATH=$JAVA_HOME/bin:$PATH
+
 # virtualenvwrapper settings 
 # http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/
 export WORKON_HOME=$HOME/.virtualenvs
