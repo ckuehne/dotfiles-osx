@@ -2,3 +2,5 @@
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 # add gnu-sed to PATH (replaces BSD sed)
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# add gnu-getopt to PATH (replaces BSD getopt)
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
