@@ -251,3 +251,7 @@ function gi() {
 	local IFS=,
 	eval npm install --save-dev grunt-{"$*"}
 }
+
+function wholistens() {
+  lsof -nP -i4TCP:$1 | grep LISTEN
+}
