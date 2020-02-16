@@ -61,6 +61,14 @@ brew install webkit2png
 # brew install zopfli
 brew install rmtrash
 
+brew install jq
+brew install the_silver_searcher
+brew install bat
+brew install curl
+
+brew install spectacle
+
+
 brew tap homebrew/versions
 # brew install lua52
 
@@ -73,19 +81,19 @@ function installcask() {
 }
 
 installcask dropbox
-installcask KeyRemap4MacBook
+# installcask KeyRemap4MacBook
 # installcask google-chrome
 # installcask google-chrome-canary
 # installcask imagealpha
 # installcask imageoptim
-installcask miro-video-converter
+# installcask miro-video-converter
 installcask the-unarchiver
 installcask tor-browser
-installcask transmission
+# installcask transmission
 # installcask ukelele
 # installcask virtualbox
-installcask vlc
-installcask skype
+# installcask vlc
+# installcask skype
 
 # Remove outdated versions from the cellar
 brew cleanup
