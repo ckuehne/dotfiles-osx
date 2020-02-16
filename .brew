@@ -89,6 +89,11 @@ installcask dropbox
 # installcask miro-video-converter
 installcask the-unarchiver
 installcask tor-browser
+
+installcask caffeine
+installcask skim
+installcask karabiner-elements
+
 # installcask transmission
 # installcask ukelele
 # installcask virtualbox
